@@ -1,0 +1,39 @@
+#ifndef PARAMS_H
+#define PARAMS_H
+
+#define PARAM_M 736
+#define PARAM_N 848
+#define PARAM_p 4096
+#define PARAM_q 16
+#define PARAM_Q 65536
+#define PARAM_SIGMAG (PARAM_q * PARAM_R)
+#define PARAM_SIGMA1 1055.6
+#define PARAM_BOUND 62521L
+#define PARAM_BOUND_SQUARE (PARAM_BOUND * PARAM_BOUND)
+#define PARAM_QBITS 16
+#define PARAM_SIG_BYTES (PARAM_SALT_BYTES + PARAM_COMPRESSED_SIG_BYTES)
+
+#define PARAMS_STRIPE_STEP 8
+
+#define PARAM_R 1.3250518175969843
+#define PARAM_L22_BYTES (PARAM_N * (1 + PARAM_N) / 2 * 8)
+#define PARAM_L32_BYTES (PARAM_M * PARAM_N * 8)
+#define PARAM_L33_BYTES (PARAM_M * (1 + PARAM_M) / 2 * 8)
+
+#define PARAM_SEED_BYTES 32
+#define PARAM_R_BYTES (2 * ((PARAM_N + PARAM_M) * PARAM_M / 8))
+#define PARAM_B_BYTES (PARAM_QBITS * PARAM_M * PARAM_M / 8)
+#define PARAM_PK_BYTES (PARAM_B_BYTES + PARAM_SEED_BYTES)
+#define PARAM_SK_BYTES (PARAM_R_BYTES + PARAM_L22_BYTES + PARAM_L32_BYTES + PARAM_L33_BYTES)
+
+#define PI 3.141592653589793
+#define PARAM_SALT_BYTES 40
+
+#define PARAM_SIG_SIZE (PARAM_M + PARAM_N)
+#define PARAM_COMPRESSED_SIG_BYTES 2410
+#define PARAM_SIG_TRUNC (82 << 7)
+
+#define mat_element(M, nb_col, i, j) M[((i) * (nb_col)) + (j)]
+#define tri_mat_element(M, i, j) M[(i) * ((i) + 1) / 2 + (j)]
+
+#endif
